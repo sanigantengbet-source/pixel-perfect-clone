@@ -206,7 +206,18 @@ export const experience: Job[] = [
 export const skillGroups: { title: string; items: string[] }[] = [
   {
     title: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "HTML", "CSS", "Bash"],
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Kotlin",
+      "Java",
+      "Ruby",
+      "Rust",
+      "HTML",
+      "CSS",
+      "Bash",
+    ],
   },
   {
     title: "Frontend",
@@ -261,7 +272,36 @@ export const skillGroups: { title: string; items: string[] }[] = [
       "DESIGN.md",
     ],
   },
-  { title: "Tools", items: ["Acode", "Termux", "GitHub", "Vercel CLI"] },
+  {
+    title: "AI & ML",
+    items: [
+      "Claude API",
+      "OpenAI API",
+      "Gemini",
+      "LangChain",
+      "Mastra",
+      "RAG",
+      "ONNX",
+      "MCP Servers",
+      "MediaPipe",
+      "LiveKit",
+      "Embeddings",
+    ],
+  },
+  {
+    title: "Tools & Deployment",
+    items: [
+      "Git",
+      "VS Code",
+      "Acode",
+      "Termux",
+      "Linux",
+      "GitHub",
+      "GitLab",
+      "Vercel",
+      "Vercel CLI",
+    ],
+  },
 ];
 
 export const designPreferences = [

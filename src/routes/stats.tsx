@@ -42,6 +42,18 @@ function Donut() {
         offset += len;
         return el;
       })}
+      {/* ribbed overlay */}
+      <circle
+        cx="80"
+        cy="80"
+        r={r}
+        fill="none"
+        stroke="var(--background)"
+        strokeWidth="16"
+        strokeDasharray="1.5 4"
+        opacity="0.55"
+        transform="rotate(-90 80 80)"
+      />
       <text
         x="80"
         y="76"
@@ -98,42 +110,32 @@ function Gauge() {
 function GrowthChart() {
   const data = stats.growth;
   const w = 320;
-  const h = 140;
+  const h = 120;
   const max = Math.max(...data.map((d) => d.v));
+  const min = Math.min(...data.map((d) => d.v));
   const pts: [number, number][] = data.map((d, i) => [
-    (i / (data.length - 1)) * (w - 24) + 12,
-    h - 24 - (d.v / max) * (h - 48),
+    (i / (data.length - 1)) * (w - 60) + 8,
+    h - 22 - ((d.v - min) / (max - min || 1)) * (h - 44),
   ]);
   const line = pts.map((p, i) => `${i === 0 ? "M" : "L"}${p[0]},${p[1]}`).join(" ");
-  const last = pts[pts.length - 1]!;
-  const first = pts[0]!;
-  const area = `${line} L${last[0]},${h - 12} L${first[0]},${h - 12} Z`;
+  const delta = `+${Math.round(((data[data.length - 1]!.v - data[0]!.v) / data[0]!.v) * 100)}.0%`;
 
   return (
-    <div className="panel panel-hover p-3">
+    <div className="relative">
       <svg viewBox={`0 0 ${w} ${h}`} className="w-full">
-        <defs>
-          <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--success)" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="var(--success)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {[0, 1, 2, 3].map((i) => (
-          <line
-            key={i}
-            x1="12"
-            x2={w - 12}
-            y1={20 + i * ((h - 44) / 3)}
-            y2={20 + i * ((h - 44) / 3)}
-            stroke="var(--border)"
-            strokeWidth="1"
-          />
-        ))}
-        <path d={area} fill="url(#growthFill)" />
+        <line
+          x1="8"
+          x2={w - 56}
+          y1={h / 2 - 6}
+          y2={h / 2 - 6}
+          stroke="var(--border)"
+          strokeWidth="1"
+          strokeDasharray="6 6"
+        />
         <path
           d={line}
           fill="none"
-          stroke="var(--success)"
+          stroke="var(--amber)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -144,14 +146,18 @@ function GrowthChart() {
             animation: "growthDraw 1.4s cubic-bezier(0.22,1,0.36,1) both",
           }}
         />
-        {pts.map((p, i) => (
-          <circle key={i} cx={p[0]} cy={p[1]} r="3" fill="var(--success)" />
-        ))}
+        <text
+          x={w - 48}
+          y={pts[pts.length - 1]![1] + 4}
+          className="fill-success text-[11px] font-bold"
+        >
+          {delta}
+        </text>
         {data.map((d, i) => (
           <text
             key={d.m}
             x={pts[i]![0]}
-            y={h - 2}
+            y={h - 4}
             textAnchor="middle"
             className="fill-muted-foreground text-[8px] tracking-[0.15em]"
           >
