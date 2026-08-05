@@ -1,7 +1,6 @@
 import { Github, Mail, Send, MessageCircle, Music2, ShoppingBag } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import profileAsset from "@/assets/profile.jpg";
-import sfgAsset from "@/assets/sfg-logo.jpg";
 
 export function SiteHeader() {
   const actions = [
