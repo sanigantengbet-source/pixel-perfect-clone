@@ -17,10 +17,10 @@ export const profile = {
 };
 
 export const tldr = [
-  { k: "WHO", v: "Founder @ SANN404 FORUM · Pelajar & self-taught developer" },
+  { k: "WHO", v: "Founder @ SANN404 FORUM · Self-taught developer" },
   { k: "WHAT", v: "Jual source code web apps, produk digital, tools developer" },
   { k: "WHERE", v: "Indonesia · Lynk.id · WhatsApp · Telegram · TikTok" },
-  { k: "STUDY", v: "Jurusan IPS · belajar teknologi otodidak sebagai hobi" },
+  { k: "STUDY", v: "Lulus SMA 2026 (jurusan IPS) · belajar teknologi otodidak" },
   { k: "BUILD", v: "Saluran komunitas 100 → 5K+ member dalam < 6 bulan" },
 ];
 
@@ -49,8 +49,8 @@ export const quickLinks = [
 ] as const;
 
 export const aboutParagraphs = [
-  "Saya seorang pelajar sekaligus builder yang aktif membangun proyek digital dan bisnis berbasis teknologi lewat SANN404 FORUM. Sehari-hari saya membuat, mengembangkan, dan menjual source code aplikasi web — fokus di produk digital, tools developer, desain modern, dan pemasaran lewat komunitas online.",
-  "Latar belakang saya jurusan IPS, dan semua soal teknologi saya pelajari otodidak sebagai hobi. Di sisi lain saya punya pengalaman marketing sekitar 2 tahun, jadi saya terbiasa memikirkan produk sekaligus cara menjualnya. Saya pernah mengelola saluran komunitas di WhatsApp yang tumbuh dari sekitar 100 anggota menjadi lebih dari 5 ribu anggota dalam waktu kurang dari setengah tahun.",
+  "Saya mulai dari bangku sekolah dan sekarang sudah lulus tahun 2026. Sejak jadi pelajar saya aktif membangun proyek digital dan bisnis berbasis teknologi lewat SANN404 FORUM. Sehari-hari saya membuat, mengembangkan, dan menjual source code aplikasi web — fokus di produk digital, tools developer, desain modern, dan pemasaran lewat komunitas online.",
+  "Latar belakang saya jurusan IPS, dan semua soal teknologi saya pelajari otodidak. Di sisi lain saya punya pengalaman marketing sekitar 2 tahun, jadi saya terbiasa memikirkan produk sekaligus cara menjualnya. Saya pernah mengelola saluran komunitas di WhatsApp yang tumbuh dari sekitar 100 anggota menjadi lebih dari 5 ribu anggota dalam waktu kurang dari setengah tahun.",
   "Stack yang saya pakai berkisar di Next.js App Router, React, TypeScript, Tailwind CSS, Node.js, Express, dan Python FastAPI. Aplikasi yang saya bangun selalu saya siapkan supaya siap deploy ke Vercel atau platform lain, dengan perhatian pada arsitektur, performa, dan keamanan.",
 ];
 
@@ -59,7 +59,7 @@ export const highlights = [
   "Saluran komunitas — 100 → 5K+ member dalam < 6 bulan",
   "Penjual source code web apps & produk digital",
   "Pengalaman marketing ~2 tahun",
-  "Self-taught developer dari jurusan IPS",
+  "Self-taught developer · lulus sekolah 2026 (jurusan IPS)",
 ];
 
 export type Project = {

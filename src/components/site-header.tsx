@@ -1,7 +1,6 @@
 import { Github, Mail, Send, MessageCircle, Music2, ShoppingBag } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import profileAsset from "@/assets/profile.jpg";
-import sfgAsset from "@/assets/sfg-logo.jpg";
 
 export function SiteHeader() {
   const actions = [
@@ -26,12 +25,6 @@ export function SiteHeader() {
           <div className="leading-tight">
             <div className="text-base font-bold tracking-tight">{profile.name}</div>
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <img
-                src={sfgAsset}
-                alt="Logo SANN404 FORUM GROUP"
-                loading="lazy"
-                className="size-4 rounded-sm bg-foreground/90 object-contain"
-              />
               <span>{profile.role}</span>
             </div>
           </div>

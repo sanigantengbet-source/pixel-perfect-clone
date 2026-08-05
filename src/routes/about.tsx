@@ -9,12 +9,12 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Cerita SANNDEC5TY: pelajar jurusan IPS, developer otodidak, dan founder SANN404 FORUM.",
+          "Cerita SANNDEC5TY: lulusan 2026 jurusan IPS, developer otodidak, dan founder SANN404 FORUM.",
       },
       { property: "og:title", content: "About — SANNDEC5TY" },
       {
         property: "og:description",
-        content: "Pelajar, developer otodidak, dan founder SANN404 FORUM.",
+        content: "Lulusan 2026, developer otodidak, dan founder SANN404 FORUM.",
       },
     ],
   }),
