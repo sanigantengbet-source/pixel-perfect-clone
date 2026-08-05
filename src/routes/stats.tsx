@@ -42,6 +42,18 @@ function Donut() {
         offset += len;
         return el;
       })}
+      {/* ribbed overlay */}
+      <circle
+        cx="80"
+        cy="80"
+        r={r}
+        fill="none"
+        stroke="var(--background)"
+        strokeWidth="16"
+        strokeDasharray="1.5 4"
+        opacity="0.55"
+        transform="rotate(-90 80 80)"
+      />
       <text
         x="80"
         y="76"
