@@ -272,7 +272,36 @@ export const skillGroups: { title: string; items: string[] }[] = [
       "DESIGN.md",
     ],
   },
-  { title: "Tools", items: ["Acode", "Termux", "GitHub", "Vercel CLI"] },
+  {
+    title: "AI & ML",
+    items: [
+      "Claude API",
+      "OpenAI API",
+      "Gemini",
+      "LangChain",
+      "Mastra",
+      "RAG",
+      "ONNX",
+      "MCP Servers",
+      "MediaPipe",
+      "LiveKit",
+      "Embeddings",
+    ],
+  },
+  {
+    title: "Tools & Deployment",
+    items: [
+      "Git",
+      "VS Code",
+      "Acode",
+      "Termux",
+      "Linux",
+      "GitHub",
+      "GitLab",
+      "Vercel",
+      "Vercel CLI",
+    ],
+  },
 ];
 
 export const designPreferences = [
