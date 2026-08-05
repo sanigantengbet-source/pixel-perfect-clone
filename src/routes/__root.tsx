@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -11,6 +12,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/site-header";
+import { BottomNav } from "@/components/bottom-nav";
+
 
 function NotFoundComponent() {
   return (
@@ -77,23 +81,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "SANNDEC5TY — Portfolio" },
+      {
+        name: "description",
+        content:
+          "Portofolio terminal SANNDEC5TY — web developer, founder SANN404 FORUM.",
+      },
+      { name: "author", content: "SANNDEC5TY" },
+      { property: "og:title", content: "SANNDEC5TY — Portfolio" },
+      {
+        property: "og:description",
+        content: "Web developer, founder SANN404 FORUM, penjual source code web apps.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -116,11 +127,21 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="min-h-screen bg-background">
+        <SiteHeader />
+        <main className="mx-auto max-w-3xl px-4 pb-28">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <div key={pathname} className="rise-in">
+            <Outlet />
+          </div>
+        </main>
+        <BottomNav />
+      </div>
     </QueryClientProvider>
   );
 }
+
