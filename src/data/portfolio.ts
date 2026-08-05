@@ -206,7 +206,18 @@ export const experience: Job[] = [
 export const skillGroups: { title: string; items: string[] }[] = [
   {
     title: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "HTML", "CSS", "Bash"],
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Kotlin",
+      "Java",
+      "Ruby",
+      "Rust",
+      "HTML",
+      "CSS",
+      "Bash",
+    ],
   },
   {
     title: "Frontend",
