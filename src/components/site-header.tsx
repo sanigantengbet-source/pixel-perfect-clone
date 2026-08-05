@@ -1,7 +1,7 @@
 import { Github, Mail, Send, MessageCircle, Music2, ShoppingBag } from "lucide-react";
 import { profile } from "@/data/portfolio";
-import profileAsset from "@/assets/profile.jpg.asset.json";
-import sfgAsset from "@/assets/sfg-logo.jpg.asset.json";
+import profileAsset from "@/assets/profile.jpg";
+import sfgAsset from "@/assets/sfg-logo.jpg";
 
 export function SiteHeader() {
   const actions = [
@@ -18,7 +18,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3">
         <div className="flex items-center gap-3">
           <img
-            src={profileAsset.url}
+            src={profileAsset}
             alt="Foto profil SANNDEC5TY"
             loading="eager"
             className="size-11 shrink-0 rounded-full border border-border object-cover transition-transform duration-300 hover:scale-105"
@@ -27,7 +27,7 @@ export function SiteHeader() {
             <div className="text-base font-bold tracking-tight">{profile.name}</div>
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <img
-                src={sfgAsset.url}
+                src={sfgAsset}
                 alt="Logo SANN404 FORUM GROUP"
                 loading="lazy"
                 className="size-4 rounded-sm bg-foreground/90 object-contain"
